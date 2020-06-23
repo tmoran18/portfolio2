@@ -28,7 +28,10 @@ class App extends React.Component {
     return (
       <Router>
         <div className="App">
-          <Navbar navbarClickHandler={this.navbarToggle} />
+          <Navbar
+            navbarClickHandler={this.navbarToggle}
+            isOpen={this.state.navbar_open}
+          />
           <Switch>
             <Route exact path="/" component={Home} />
             <Route path="/about" component={About} />
