@@ -1,0 +1,56 @@
+:root {
+  --main-bg-color: #061224;
+  --font-color: #ffffff;
+  --primary-color: #64ffda;
+  --secondary-color: #9400d3;
+  --light-blue: #ccd6f5;
+  --light-grey: #dcdcdcdc;
+}
+
+nav {
+  font-size: 20px;
+  font-family: "Fira Mono", monospace;
+  font-weight: 400;
+  /* border: 1px solid red; */
+  padding: 0px 20px;
+}
+
+ul {
+  display: flex;
+  justify-content: flex-end;
+}
+
+ul li {
+  list-style-type: none;
+  padding: 10px 20px;
+}
+
+ul li a {
+  text-decoration: none;
+  color: white;
+}
+
+.primary-color {
+  color: var(--primary-color);
+  font-weight: 400;
+}
+
+.mobile_nav {
+  border: 1px solid red;
+}
+
+.nav--list_open {
+  flex-direction: column;
+  align-items: center;
+  transition: all ease-in-out 0.3s;
+  top: 0px;
+  left: 0;
+  width: 100%;
+  position: absolute;
+}
+
+@media only screen and (max-width: 900px) {
+  nav {
+    display: none;
+  }
+}
