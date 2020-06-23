@@ -32,6 +32,9 @@ const Navbar = () => {
 
   return (
     <nav>
+      <div>
+        <img src="Asset-921.png" width="150" alt="" />
+      </div>
       <div
         className={isSmallScreen ? "burger" : "hideBurger"}
         onClick={toggleNav}
@@ -53,22 +56,25 @@ const Navbar = () => {
         }
       >
         <li>
-          <Link exact to="/">
+          <Link exact to="/" activeStyle={{ color: "var(--secondary-color)" }}>
             <span className="primary-color">01. </span>Home
           </Link>
         </li>
         <li>
-          <Link to="/about/">
+          <Link to="/about/" activeStyle={{ color: "var(--secondary-color)" }}>
             <span className="primary-color">02. </span>About
           </Link>
         </li>
         <li>
-          <Link to="/work/">
+          <Link to="/work/" activeStyle={{ color: "var(--secondary-color)" }}>
             <span className="primary-color">03. </span>Work
           </Link>
         </li>
         <li>
-          <Link to="/contact/">
+          <Link
+            to="/contact/"
+            activeStyle={{ color: "var(--secondary-color)" }}
+          >
             <span className="primary-color">04. </span>Contact
           </Link>
         </li>

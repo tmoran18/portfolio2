@@ -1,0 +1,27 @@
+.home {
+  display: flex;
+
+  justify-content: space-around;
+}
+
+.left,
+.right {
+  /* border: 1px solid coral; */
+  min-width: 200px;
+  max-width: 900px;
+  width: 900px;
+  margin: 2rem;
+  padding: 2rem;
+  align-items: initial;
+}
+
+h2 {
+  font-size: 5rem;
+}
+
+.title {
+  font-family: "Roboto Condensed", sans-serif;
+  color: var(--primary-color);
+  padding: 0px;
+  margin: 0px;
+}
