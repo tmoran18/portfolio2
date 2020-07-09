@@ -19,4 +19,5 @@ body {
   font-weight: 400;
   background: var(--main-bg-color);
   color: var(--font-color);
+  padding: 2rem;
 }
