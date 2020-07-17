@@ -8,7 +8,6 @@ html * {
   padding: 0;
   margin: 0;
   font-family: Fira mono, monospace;
-  font-size: 10px;
 }
 
 body {
@@ -63,7 +62,7 @@ body {
 }
 
 .container {
-  margin: 0 auto;
+  margin: 3rem auto;
   width: 95%;
   max-width: 2000px;
   display: flex;
@@ -75,8 +74,16 @@ h1 {
   font-size: 6rem;
 }
 
+h2 {
+  font-size: 3rem;
+}
+
 .roboto {
   font-family: "Roboto Condensed", sans-serif;
+}
+
+.bold {
+  font-weight: 500;
 }
 
 .flex_container div {
@@ -87,6 +94,14 @@ h1 {
 .responsive_img {
   width: 100%;
   height: auto;
+}
+
+.text_center {
+  text-align: center;
+}
+
+.text_right {
+  text-align: right;
 }
 /************** Nav **************/
 .top_nav {
@@ -169,10 +184,14 @@ svg:hover {
   border: 1px solid var(--primary);
 }
 
-.flex_container .social_icons {
-  margin: 2rem 0 0 0;
-  max-width: 200px;
+.social_icons {
+  margin: 2rem 0.3rem;
+  min-height: 150px;
+  justify-content: space-between;
   display: flex;
+  flex-direction: column;
+  position: fixed;
+  bottom: 2vh;
 }
 
 .btn {
@@ -189,11 +208,29 @@ svg:hover {
   border: 1px solid var(--secondary);
   color: var(--secondary);
 }
+/************** ABOUT **************/
+#about > span {
+  font-size: 1.1rem;
+}
+
+/************** CONTACT **************/
+.form_container {
+  border: 1px solid red;
+  max-width: 700px;
+  margin: auto;
+}
+
+.input_row input[type="text"] {
+  min-width: 273px;
+  min-height: 51px;
+}
 /************** Media Queries **************/
 @media screen and (max-width: 900px) {
   .hamburger_menu {
     display: block;
     cursor: pointer;
+    position: fixed;
+    right: 0px;
   }
   .top_nav {
     justify-content: space-between;
@@ -227,8 +264,12 @@ svg:hover {
   #active {
     color: var(--primary);
   }
-  .logo img {
-    width: 60px;
+  .logo {
+    display: none;
+  }
+  .social_icons {
+    flex-direction: row;
+    top: -25px;
   }
   .flex_container {
     flex-direction: column-reverse;
