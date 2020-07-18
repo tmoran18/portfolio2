@@ -133,11 +133,57 @@
     <section class="container" id="contact">
       <div class="form_container">
         <h2 class="form_title">Let's Talk</h2>
-        <form action="">
+        <span></span>
+        <hr class="form_divider m_b_2" />
+        <form name="contact" method="POST" data-netlify="true">
+          <!-- First Name / Last Name -->
           <div class="input_row">
-            <input type="text" />
-            <input type="text" />
+            <div class="input_container">
+              <label for="first_name"
+                >First Name <span class="red">*</span></label
+              >
+              <input type="text" name="first_name" />
+            </div>
+            <div class="input_container">
+              <label for="last_name"
+                >Last Name <span class="red">*</span></label
+              >
+              <input type="text" name="last_name" />
+            </div>
           </div>
+          <!-- Email -->
+          <div class="input_row m_t_b_1">
+            <div class="input_container full_length">
+              <label for="email">Email <span class="red">*</span></label>
+              <input type="email" name="email" />
+            </div>
+          </div>
+          <!-- Org / Phone -->
+          <div class="input_row">
+            <div class="input_container">
+              <label for="organisation">Organisation</label>
+              <input type="text" name="organisation" />
+            </div>
+            <div class="input_container">
+              <label for="phone">Phone</label>
+              <input type="text" name="phone" />
+            </div>
+          </div>
+          <div class="input_row m_t_b_1">
+            <div class="input_container full_length">
+              <label for="message">Message <span class="red">*</span></label>
+              <textarea
+                name="message"
+                id=""
+                cols="30"
+                rows="10"
+                placeholder="Your Message..."
+                name="message"
+              ></textarea>
+            </div>
+          </div>
+          <input type="submit" value="Submit" class="submit_btn" />
+          <input type="reset" value="Reset" class="submit_btn reset" />
         </form>
       </div>
     </section>
