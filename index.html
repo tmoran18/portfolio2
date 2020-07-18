@@ -129,20 +129,23 @@
         <button class="btn">See my grades</button>
       </div>
     </section>
+    <!-- CONTACT SECTION -->
     <section class="container" id="work">work</section>
     <section class="container" id="contact">
       <div class="form_container">
-        <h2 class="form_title">Let's Talk</h2>
-        <span></span>
+        <h2 class="form_title primary_color">Let's Talk</h2>
+        <div class="required_note xs_font">
+          <span class="red">*</span>Indicates a required field
+        </div>
         <hr class="form_divider m_b_2" />
         <form name="contact" method="POST" data-netlify="true">
           <!-- First Name / Last Name -->
           <div class="input_row">
             <div class="input_container">
-              <label for="first_name"
+              <label for="first_name" class="active_label"
                 >First Name <span class="red">*</span></label
               >
-              <input type="text" name="first_name" />
+              <input type="text" name="first_name" class="active_input" />
             </div>
             <div class="input_container">
               <label for="last_name"
@@ -154,24 +157,28 @@
           <!-- Email -->
           <div class="input_row m_t_b_1">
             <div class="input_container full_length">
-              <label for="email">Email <span class="red">*</span></label>
-              <input type="email" name="email" />
+              <label for="email" class=""
+                >Email <span class="red">*</span></label
+              >
+              <input type="email" name="email" class="" />
             </div>
           </div>
           <!-- Org / Phone -->
           <div class="input_row">
             <div class="input_container">
-              <label for="organisation">Organisation</label>
-              <input type="text" name="organisation" />
+              <label for="organisation" class="">Organisation</label>
+              <input type="text" name="organisation" class="" />
             </div>
             <div class="input_container">
-              <label for="phone">Phone</label>
-              <input type="text" name="phone" />
+              <label for="phone" class="">Phone</label>
+              <input type="text" name="phone" class="" />
             </div>
           </div>
           <div class="input_row m_t_b_1">
             <div class="input_container full_length">
-              <label for="message">Message <span class="red">*</span></label>
+              <label for="message" class=""
+                >Message <span class="red">*</span></label
+              >
               <textarea
                 name="message"
                 id=""
@@ -179,6 +186,7 @@
                 rows="10"
                 placeholder="Your Message..."
                 name="message"
+                class=""
               ></textarea>
             </div>
           </div>
