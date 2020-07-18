@@ -219,7 +219,7 @@ svg:hover {
 
 /************** CONTACT **************/
 .form_container {
-  width: 580px;
+  width: 95%;
   max-width: 700px;
   margin: auto;
   position: relative;
@@ -238,17 +238,12 @@ svg:hover {
 
 .input_row input[type="text"],
 .input_row input[type="email"] {
-  min-width: 273px;
   padding: 12px;
   background: var(--bg);
   border-radius: 3px;
   outline: none;
   color: var(--text);
   border: 1px solid var(--text);
-}
-
-.full_length {
-  width: 100%;
 }
 
 .form_divider {
@@ -260,6 +255,10 @@ svg:hover {
 .input_container {
   display: flex;
   flex-direction: column;
+  width: 48%;
+}
+.full_length {
+  width: 100%;
 }
 
 textarea {
@@ -303,10 +302,13 @@ input[type="text"].active_input,
     display: block;
     cursor: pointer;
     position: fixed;
-    right: 0px;
+    right: 0.5rem;
+    top: 0.5rem;
   }
   .top_nav {
     justify-content: space-between;
+    z-index: 1;
+    padding: 30px 0;
   }
   .menu_links {
     display: flex;
@@ -316,7 +318,7 @@ input[type="text"].active_input,
     top: -16rem;
     left: 0;
     padding: 0;
-    margin: 0;
+    margin: 10px;
     text-align: center;
   }
   .menu_links.mobile {
@@ -343,6 +345,8 @@ input[type="text"].active_input,
   .social_icons {
     flex-direction: row;
     top: -25px;
+    height: 25px;
+    z-index: 2;
   }
   .flex_container {
     flex-direction: column-reverse;
@@ -357,6 +361,32 @@ input[type="text"].active_input,
   }
 }
 
+/*  FORM MEDIA QUERIES */
+@media screen and (max-width: 650px) {
+  .input_row {
+    flex-direction: column;
+  }
+  .input_row.m_t_b_1 {
+    margin: 0.3rem 0;
+  }
+  .input_container {
+    margin: 0.3rem 0;
+    width: 100%;
+  }
+  .required_note {
+    left: 0;
+    margin: 1rem 0;
+  }
+  .form_divider {
+    display: none;
+  }
+  .form_title {
+    margin-bottom: 2rem;
+  }
+  .submit_btn {
+    max-width: 45%;
+  }
+}
 .m_t_b_1 {
   margin: 1rem 0;
 }
