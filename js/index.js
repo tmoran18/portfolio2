@@ -1,14 +1,18 @@
+// Globals
 const MENU_LINKS = document.getElementById("menuLinks");
+const NAV_LINKS = document.querySelectorAll("#menuLinks a");
 const BURGER = document.querySelector(".hamburger_menu");
 const MEDIA_QUERY = window.matchMedia("(min-width: 700px)");
 const INPUTS = document.querySelectorAll(".input_container");
 
+// Toggles adding mobile class to menu
 const mobileNav = () => {
   MENU_LINKS.className === "menu_links"
-    ? (MENU_LINKS.className += " mobile" + " transition")
+    ? (MENU_LINKS.className += " mobile")
     : (MENU_LINKS.className = "menu_links");
 };
 
+// closes the mobile nav if screen opens
 const closeMobileNav = (MEDIA_QUERY) => {
   if (MEDIA_QUERY.matches) {
     MENU_LINKS.className = "menu_links";
@@ -32,6 +36,7 @@ INPUTS.forEach((input) => {
   });
 });
 
+// Resets focus outline and colors on inputs
 const resetActiveInputs = () => {
   INPUTS.forEach((input) => {
     const INPUT = input.childNodes[3];
@@ -40,3 +45,11 @@ const resetActiveInputs = () => {
     LABEL.classList = "active_label" && LABEL.classList.remove("active_label");
   });
 };
+
+// Close mobile nav if link clicked
+NAV_LINKS.forEach((link) => {
+  link.addEventListener("click", (e) => {
+    MENU_LINKS.className = "menu_links";
+    BURGER.classList.remove("change");
+  });
+});
