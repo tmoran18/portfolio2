@@ -109,6 +109,11 @@ h2 {
   text-align: right;
 }
 /************** Nav **************/
+header {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
 .top_nav {
   position: fixed;
   width: calc(100% - 20px);
@@ -191,7 +196,7 @@ svg:hover {
 }
 
 .social_icons {
-  margin: 2rem 0.3rem;
+  margin: 2rem 0.7rem;
   min-height: 150px;
   justify-content: space-between;
   display: flex;
@@ -332,8 +337,8 @@ input[type="text"].active_input,
     display: block;
     cursor: pointer;
     position: fixed;
-    right: 0.5rem;
-    top: 0.5rem;
+    right: 1rem;
+    top: 1rem;
   }
   .top_nav {
     justify-content: space-between;
@@ -374,7 +379,7 @@ input[type="text"].active_input,
   }
   .social_icons {
     flex-direction: row;
-    top: -25px;
+    top: -18px;
     height: 25px;
     z-index: 2;
   }
