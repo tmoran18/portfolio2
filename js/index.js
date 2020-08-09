@@ -20,7 +20,14 @@ const closeMobileNav = (MEDIA_QUERY) => {
   }
 };
 
-BURGER.addEventListener("click", mobileNav);
+BURGER.addEventListener("click", () => {
+  mobileNav();
+  setTimeout(() => {
+    MENU_LINKS.className = "menu_links";
+    BURGER.classList.remove("change");
+  }, 3000);
+});
+
 MEDIA_QUERY.addListener(closeMobileNav); // Attach listener function on state changes
 closeMobileNav(MEDIA_QUERY); // Call listener function at run time
 
