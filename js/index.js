@@ -4,6 +4,8 @@ const NAV_LINKS = document.querySelectorAll("#menuLinks a");
 const BURGER = document.querySelector(".hamburger_menu");
 const MEDIA_QUERY = window.matchMedia("(min-width: 700px)");
 const INPUTS = document.querySelectorAll(".input_container");
+const GRADES_BTN = document.querySelector("#grades_btn");
+const GRADES_CONTAINER = document.querySelector(".grades_container");
 
 // Toggles adding mobile class to menu
 const mobileNav = () => {
@@ -59,4 +61,17 @@ NAV_LINKS.forEach((link) => {
     MENU_LINKS.className = "menu_links";
     BURGER.classList.remove("change");
   });
+});
+
+// Event listener to show grades
+GRADES_BTN.addEventListener("click", () => {
+  if (GRADES_CONTAINER.classList.contains("hide")) {
+    GRADES_CONTAINER.classList.remove("hide");
+    GRADES_CONTAINER.classList.add("flex");
+    GRADES_BTN.textContent = "Hide my grades";
+  } else {
+    GRADES_CONTAINER.classList.remove("flex");
+    GRADES_CONTAINER.classList.add("hide");
+    GRADES_BTN.textContent = "See my grades";
+  }
 });

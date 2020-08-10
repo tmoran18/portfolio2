@@ -65,6 +65,13 @@ body {
   padding: 2rem;
 }
 
+.flex {
+  display: flex;
+}
+
+.hide {
+  display: none;
+}
 .container {
   margin: 5rem auto 2rem auto;
   width: 95%;
@@ -227,7 +234,6 @@ svg:hover {
 /* Education */
 
 .grades_container {
-  display: flex;
   flex-wrap: wrap;
 }
 .grade {
@@ -245,6 +251,11 @@ svg:hover {
   font-weight: 700;
   font-size: 1rem;
 }
+/************** WORK **************/
+#work {
+  justify-content: center;
+}
+
 /************** CONTACT **************/
 .form_container {
   width: 95%;
