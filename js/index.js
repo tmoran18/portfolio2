@@ -8,8 +8,11 @@ const GRADES_BTN = document.querySelector('#grades_btn');
 const GRADES_CONTAINER = document.querySelector('.grades_container');
 const WORK_CARD_CONTAINER = document.querySelector('.work_card_container');
 const WORK_CARD_BTNS = document.querySelectorAll('.learn_more_btn');
-const WORK_CLOSE_BTN = document.querySelector('.close_btn');
-const WORK_MODAL = document.querySelector('.work_modal');
+const WORK_CLOSE_BTN = document.querySelectorAll('.close_btn');
+const NEXT = document.querySelectorAll('.next');
+const PREV = document.querySelectorAll('.prev');
+
+let modalName = '';
 
 // Toggles adding mobile class to menu
 const mobileNav = () => {
@@ -81,16 +84,79 @@ GRADES_BTN.addEventListener('click', () => {
 });
 
 // Hide Work Cards
+// Show specific modal
 WORK_CARD_BTNS.forEach((btn) => {
-	btn.addEventListener('click', () => {
+	btn.addEventListener('click', (e) => {
 		// Hide the word card container
+		modalName = e.target.id;
 		WORK_CARD_CONTAINER.classList.add('hide');
-		WORK_MODAL.classList.remove('hide');
+		// Show the correct modal as per button clicked
+		document
+			.querySelector(`[data-modal='${modalName}']`)
+			.classList.remove('hide');
 	});
 });
-// Show Work Modal
 
-WORK_CLOSE_BTN.addEventListener('click', () => {
-	WORK_MODAL.classList.add('hide');
-	WORK_CARD_CONTAINER.classList.remove('hide');
+// Close the Modal
+WORK_CLOSE_BTN.forEach((btn) => {
+	btn.addEventListener('click', () => {
+		document.querySelector(`[data-modal='${modalName}']`).classList.add('hide');
+		WORK_CARD_CONTAINER.classList.remove('hide');
+		// set the current slide back to 1;
+		resetSlide();
+	});
 });
+
+const nextSlide = () => {
+	// Get current class of opened modal
+	const current = document.querySelector(
+		`[data-modal='${modalName}'] .slider .slide.current`
+	);
+	// Get all slides in opened modal
+	const slides = document.querySelectorAll(
+		`[data-modal='${modalName}'] .slider .slide`
+	);
+	// Remove current class
+	current.classList.remove('current');
+	// Check for next slide
+	if (current.nextElementSibling) {
+		// Add current to next sibling
+		current.nextElementSibling.classList.add('current');
+	} else {
+		// Add current to start
+		slides[0].classList.add('current');
+	}
+};
+const prevSlide = () => {
+	const current = document.querySelector(
+		`[data-modal='${modalName}'] .slider .slide.current`
+	);
+	const slides = document.querySelectorAll(
+		`[data-modal='${modalName}'] .slider .slide`
+	);
+	current.classList.remove('current');
+	if (current.previousElementSibling) {
+		current.previousElementSibling.classList.add('current');
+	} else {
+		slides[slides.length - 1].classList.add('current');
+	}
+};
+
+NEXT.forEach((nextBtn) => {
+	nextBtn.addEventListener('click', nextSlide);
+});
+
+PREV.forEach((prevBtn) => {
+	prevBtn.addEventListener('click', prevSlide);
+});
+
+// Reset the current back to first slide
+const resetSlide = () => {
+	const slides = document.querySelectorAll(
+		`[data-modal='${modalName}'] .slider .slide`
+	);
+	document
+		.querySelector(`[data-modal='${modalName}'] .slider .slide.current`)
+		.classList.remove('current');
+	slides[0].classList.add('current');
+};
