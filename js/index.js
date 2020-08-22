@@ -3,6 +3,7 @@ const MENU_LINKS = document.getElementById('menuLinks');
 const NAV_LINKS = document.querySelectorAll('#menuLinks a');
 const BURGER = document.querySelector('.hamburger_menu');
 const MEDIA_QUERY = window.matchMedia('(min-width: 700px)');
+const MEDIA_QUERY_MOBILE = window.matchMedia('(max-width: 900px)');
 const INPUTS = document.querySelectorAll('.input_container');
 const GRADES_BTN = document.querySelector('#grades_btn');
 const GRADES_CONTAINER = document.querySelector('.grades_container');
@@ -11,6 +12,10 @@ const WORK_CARD_BTNS = document.querySelectorAll('.learn_more_btn');
 const WORK_CLOSE_BTN = document.querySelectorAll('.close_btn');
 const NEXT = document.querySelectorAll('.next');
 const PREV = document.querySelectorAll('.prev');
+const THEME = document.querySelector('.theme_icon_container');
+const BODY = document.querySelector('body');
+const LIGHT_ICON = document.querySelector('[data-theme="light"]');
+const DARK_ICON = document.querySelector('[data-theme="dark"]');
 
 let modalName = '';
 
@@ -19,6 +24,7 @@ const mobileNav = () => {
 	MENU_LINKS.className === 'menu_links'
 		? (MENU_LINKS.className += ' mobile')
 		: (MENU_LINKS.className = 'menu_links');
+	console.log('small');
 };
 
 // closes the mobile nav if screen opens
@@ -107,6 +113,8 @@ WORK_CLOSE_BTN.forEach((btn) => {
 	});
 });
 
+// Slider
+
 const nextSlide = () => {
 	// Get current class of opened modal
 	const current = document.querySelector(
@@ -127,6 +135,7 @@ const nextSlide = () => {
 		slides[0].classList.add('current');
 	}
 };
+
 const prevSlide = () => {
 	const current = document.querySelector(
 		`[data-modal='${modalName}'] .slider .slide.current`
@@ -160,3 +169,16 @@ const resetSlide = () => {
 		.classList.remove('current');
 	slides[0].classList.add('current');
 };
+
+// Dark / Light theme
+THEME.addEventListener('click', () => {
+	if (BODY.classList.contains('light')) {
+		BODY.classList.remove('light');
+		LIGHT_ICON.classList.remove('hide');
+		DARK_ICON.classList.add('hide');
+	} else if (!BODY.classList.contains('light')) {
+		BODY.classList.add('light');
+		LIGHT_ICON.classList.add('hide');
+		DARK_ICON.classList.remove('hide');
+	}
+});

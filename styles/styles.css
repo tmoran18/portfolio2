@@ -22,6 +22,18 @@ body {
 	line-height: 1.5;
 }
 
+body.light {
+	--bg: #fafafa;
+	--primary: dodgerblue;
+	--secondary: #ff6827;
+	--text: #061224;
+	--l_blue: #ccd6f5;
+	--red: rgb(253, 29, 29);
+	background: var(--bg);
+	color: var(--text);
+	line-height: 1.5;
+}
+
 /************** Utilitie Classes **************/
 .xs_font {
 	font-size: 0.8rem;
@@ -145,6 +157,7 @@ nav * {
 
 .menu_links {
 	margin-left: 50px;
+	margin-right: 5rem;
 	transition: all 0.5s ease;
 	display: flex;
 	align-items: center;
@@ -192,6 +205,15 @@ nav * {
 	transform: rotate(45deg) translate(-7px, -8px);
 }
 
+.theme_icon_container {
+	position: absolute;
+	right: 2rem;
+	cursor: pointer;
+}
+
+.invert_filter {
+	filter: invert();
+}
 /************** Home **************/
 .social_icons svg {
 	fill: var(--secondary);
@@ -269,7 +291,7 @@ nav * {
 .work_card {
 	min-width: 300px;
 	min-height: 280px;
-	border: 1px solid #64ffda;
+	border: 1px solid var(--primary);
 }
 
 .learn_more_btn {
@@ -326,9 +348,8 @@ nav * {
 	cursor: pointer;
 	padding: 10px;
 	border-radius: 100px;
-	background: --primary;
 	background: #061224;
-	fill: #64ffda;
+	fill: var(--primary);
 	transition: transform 1s;
 }
 
@@ -542,6 +563,10 @@ input[type='text'].active_input,
 	}
 	.modal {
 		max-width: 600px;
+	}
+	.theme_icon_container {
+		top: 0.9rem;
+		left: 11.5rem;
 	}
 }
 
