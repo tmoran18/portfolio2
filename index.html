@@ -255,23 +255,26 @@
         <span class="red">*</span>Indicates a required field
       </div>
       <hr class="form_divider m_b_2" />
-      <form name="contact" method="POST" data-netlify="true">
+      <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+        <p class="hidden">
+          <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
+        </p>
         <!-- First Name / Last Name -->
         <div class="input_row">
           <div class="input_container">
             <label for="first_name" class="active_label">First Name <span class="red">*</span></label>
-            <input type="text" name="first_name" class="active_input" />
+            <input type="text" name="first_name" required class="active_input" />
           </div>
           <div class="input_container">
             <label for="last_name">Last Name <span class="red">*</span></label>
-            <input type="text" name="last_name" />
+            <input type="text" name="last_name" required />
           </div>
         </div>
         <!-- Email -->
         <div class="input_row m_t_b_1">
           <div class="input_container full_length">
             <label for="email" class="">Email <span class="red">*</span></label>
-            <input type="email" name="email" class="" />
+            <input type="email" name="email" required />
           </div>
         </div>
         <!-- Org / Phone -->
@@ -289,7 +292,7 @@
           <div class="input_container full_length">
             <label for="message" class="">Message <span class="red">*</span></label>
             <textarea name="message" id="" cols="30" rows="10" placeholder="Your Message..." name="message"
-              class=""></textarea>
+              required></textarea>
           </div>
         </div>
         <input type="submit" value="Submit" class="submit_btn" />
