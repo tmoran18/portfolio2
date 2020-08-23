@@ -135,6 +135,10 @@ h2 {
 	text-align: justify;
 }
 
+a {
+	text-decoration: none;
+}
+
 /************** Nav **************/
 header {
 	width: 100%;

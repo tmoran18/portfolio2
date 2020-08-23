@@ -48,8 +48,8 @@
         </p>
         <br />
         <br />
-        <a href="#about" style="margin-right: 1rem;"><button class="s_font btn">About Me</button></a>
-        <a href="#work_anchor"><button class="s_font btn">My Work</button></a>
+        <a href="#about" class="s_font btn" style="margin-right: 1rem;">About Me</a>
+        <a href="#work_anchor" class="s_font btn">My Work</a>
       </div>
       <div class="s_font">
         <img src="./assets/computer.png" alt="an illustration of a computer on a desk" class="responsive_img" />
@@ -152,7 +152,6 @@
           <span>Programming II</span>
           <span>HD</span>
         </div>
-
         <div class="grade bounce-in-top">
           <span>Programming I</span>
           <span>HD</span>
@@ -182,8 +181,9 @@
           <span>HD</span>
         </div>
       </div>
+    </div>
   </section>
-
+  <!-- Work Section -->
   <section class="text_center" id="work">
     <div class="anchor" id="work_anchor"></div>
     <h1 class="primary_color ">work</h1>
@@ -264,36 +264,35 @@
         <div class="input_row">
           <div class="input_container">
             <label for="first_name" class="active_label">First Name <span class="red">*</span></label>
-            <input type="text" name="first_name" required class="active_input" />
+            <input type="text" id="first_name" name="first_name" required class="active_input" />
           </div>
           <div class="input_container">
             <label for="last_name">Last Name <span class="red">*</span></label>
-            <input type="text" name="last_name" required />
+            <input type="text" id="last_name" name="last_name" required />
           </div>
         </div>
         <!-- Email -->
         <div class="input_row m_t_b_1">
           <div class="input_container full_length">
             <label for="email" class="">Email <span class="red">*</span></label>
-            <input type="email" name="email" required />
+            <input type="email" id="email" name="email" required />
           </div>
         </div>
         <!-- Org / Phone -->
         <div class="input_row">
           <div class="input_container">
             <label for="organisation" class="">Organisation</label>
-            <input type="text" name="organisation" class="" />
+            <input type="text" id="organisation" name="organisation" class="" />
           </div>
           <div class="input_container">
             <label for="phone" class="">Phone</label>
-            <input type="text" name="phone" class="" />
+            <input type="text" id="phone" name="phone" class="" />
           </div>
         </div>
         <div class="input_row m_t_b_1">
           <div class="input_container full_length">
             <label for="message" class="">Message <span class="red">*</span></label>
-            <textarea name="message" id="" cols="30" rows="10" placeholder="Your Message..." name="message"
-              required></textarea>
+            <textarea name="message" id="message" cols="30" rows="10" placeholder="Your Message..." required></textarea>
           </div>
         </div>
         <input type="submit" value="Submit" class="submit_btn" />
