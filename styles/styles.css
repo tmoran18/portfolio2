@@ -260,6 +260,7 @@ nav * {
 	border: 1px solid var(--secondary);
 	color: var(--secondary);
 }
+
 /************** ABOUT **************/
 #about > span {
 	font-size: 1.1rem;
@@ -577,6 +578,9 @@ input[type='text'].active_input,
 	.theme_icon_container {
 		top: 0.9rem;
 		left: 11.5rem;
+	}
+	#home a.btn {
+		padding: 0.3rem 0.6rem;
 	}
 }
 
