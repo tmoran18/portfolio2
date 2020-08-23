@@ -467,6 +467,7 @@ textarea {
 	outline: none;
 	border-radius: 3px;
 	padding: 12px;
+	color: var(--text);
 }
 
 .submit_btn {
