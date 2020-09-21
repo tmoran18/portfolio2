@@ -139,6 +139,10 @@ a {
 	text-decoration: none;
 }
 
+.underline {
+	text-decoration: underline;
+}
+
 /************** Nav **************/
 header {
 	width: 100%;
